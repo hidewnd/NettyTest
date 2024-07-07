@@ -1,4 +1,4 @@
-package com.hidewnd.sofademo;
+package com.hidewnd.netty;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

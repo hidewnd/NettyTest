@@ -1,4 +1,4 @@
-package com.hidewnd.sofademo.demos.web.dto;
+package com.hidewnd.netty.demos.web.dto;
 
 import lombok.Data;
 

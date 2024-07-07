@@ -1,8 +1,8 @@
-package com.hidewnd.sofademo.demos.web;
+package com.hidewnd.netty.demos.web;
 
-import com.hidewnd.sofademo.demos.socket.config.NioWebSocketChannelPool;
-import com.hidewnd.sofademo.demos.web.dto.R;
-import com.hidewnd.sofademo.demos.web.dto.TestDto;
+import com.hidewnd.netty.demos.socket.config.NioWebSocketChannelPool;
+import com.hidewnd.netty.demos.web.dto.R;
+import com.hidewnd.netty.demos.web.dto.TestDto;
 import io.netty.channel.Channel;
 import io.netty.handler.codec.http.websocketx.TextWebSocketFrame;
 import org.springframework.beans.factory.annotation.Autowired;

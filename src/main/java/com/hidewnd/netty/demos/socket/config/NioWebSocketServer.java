@@ -1,4 +1,4 @@
-package com.hidewnd.sofademo.demos.socket.config;
+package com.hidewnd.netty.demos.socket.config;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;

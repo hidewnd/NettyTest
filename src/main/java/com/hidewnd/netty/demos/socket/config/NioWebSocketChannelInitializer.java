@@ -1,4 +1,4 @@
-package com.hidewnd.sofademo.demos.socket.config;
+package com.hidewnd.netty.demos.socket.config;
 
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.socket.SocketChannel;
