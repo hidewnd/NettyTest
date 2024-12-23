@@ -1,5 +1,6 @@
 package com.hidewnd.netty.demos.web;
 
+import com.alibaba.fastjson2.JSONObject;
 import com.hidewnd.netty.demos.socket.config.NioWebSocketChannelPool;
 import com.hidewnd.netty.demos.web.dto.R;
 import com.hidewnd.netty.demos.web.dto.TestDto;
@@ -25,15 +26,27 @@ public class SocketController {
     public R<String> test(@RequestBody TestDto dto) {
         Channel channel = nioWebSocketChannelPool.getChannel(dto.getUserId());
         if (channel != null) {
-            channel.writeAndFlush(new TextWebSocketFrame(dto.getText()));
+            String text = getText(dto);
+            channel.writeAndFlush(new TextWebSocketFrame(text));
         }
         return R.success("发送成功");
     }
 
+    private static String getText(TestDto dto) {
+        String text = "";
+        if (dto.getText() != null && dto.getText() instanceof String) {
+            text = (String) dto.getText();
+        } else {
+            text = JSONObject.toJSONString(dto.getText());
+        }
+        return text;
+    }
+
     @PostMapping("/send/all")
     public R<String> sendAll(@RequestBody TestDto dto) {
+        String text = getText(dto);
         for (Channel value : nioWebSocketChannelPool.userIdMap.values()) {
-            value.writeAndFlush(new TextWebSocketFrame(dto.getText()));
+            value.writeAndFlush(new TextWebSocketFrame(text));
         }
         return R.success("发送成功");
     }

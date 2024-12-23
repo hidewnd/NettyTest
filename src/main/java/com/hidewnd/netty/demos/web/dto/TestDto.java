@@ -7,5 +7,5 @@ public class TestDto {
 
     private String userId;
 
-    private String text;
+    private Object text;
 }
